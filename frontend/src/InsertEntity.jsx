@@ -18,7 +18,7 @@ function InsertEntity() {
 
   return (
     <div class="InsertEntity">
-      <h1>Submitting a form using SolidJS stores</h1>
+      <h1>Insert entity</h1>
       <form onSubmit={handleSubmit}>
         <div class="form-control">
           <label for="name">Name:</label>
