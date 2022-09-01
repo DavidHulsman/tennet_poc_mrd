@@ -1,10 +1,9 @@
 import os
-from urllib import response
 
 from flask import Flask
-from flask import request, make_response
+from flask import request
 
-from backend.service.entity import createEntity, deleteEntity, getAllEntities, getEntityById, updateEntity
+from .service.entity import createEntity, deleteEntity, getAllEntities, getEntityById, updateEntity
 
 def create_app(test_config=None):
     # create and configure the app
