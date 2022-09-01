@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
 import styles from "./InsertEntity.module.css";
 import { createSignal } from "solid-js";
 import {
+  HStack,
   Input,
   InputGroup,
   InputLeftAddon,
@@ -13,23 +13,34 @@ import {
   Heading,
   VStack,
 } from "@hope-ui/solid";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@hope-ui/solid";
 
 function InsertEntity() {
-  const [count, setCount] = createSignal(0);
+  const [value, setValue] = createSignal("");
+
+  const handleInput = (e) => setValue(e.target.value);
+
+  const isInvalid = () => value() === "";
 
   return (
     <Center h={"100%"}>
       <VStack spacing={10}>
-        <Input placeholder="Basic usage" />
-        <Input placeholder="Basic usage" />
-        <Heading size={"xl"}>Clicks: {count()}</Heading>
-        <Button
-          variant={"subtle"}
-          colorScheme={"info"}
-          onclick={() => setCount(count() + 1)}
+        <FormControl
+          onSubmit={(values) => {
+            console.log(values);
+          }}
         >
-          Click me!
-        </Button>
+          <Input id="name" type="text" required placeholder="Name" />
+          <Input id="shortname" type="text" placeholder="Shortname" />
+          <HStack justifyContent="flex-end">
+            <Button type="submit">Submit</Button>
+          </HStack>
+        </FormControl>
       </VStack>
     </Center>
   );
