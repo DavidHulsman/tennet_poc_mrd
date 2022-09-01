@@ -14,9 +14,10 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
+    "@hope-ui/solid": "^0.6.7",
     "@stitches/core": "^1.2.8",
-    "solid-bootstrap": "^1.0.8",
     "solid-js": "^1.5.1",
-    "solid-transition-group": "^0.0.10"
+    "solid-transition-group": "^0.0.10",
+    "yup": "^0.32.11"
   }
 }
