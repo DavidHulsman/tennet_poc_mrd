@@ -1,13 +1,15 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
-import { HopeProvider } from "@hope-ui/solid";
+import { Router } from "@solidjs/router";
 
 import "./index.css";
-import InsertEntity from "./InsertEntity";
+import App from "./App";
 
 render(
   () => (
-      <InsertEntity />
+    <Router>
+      <App />
+    </Router>
   ),
   document.getElementById("root")
 );

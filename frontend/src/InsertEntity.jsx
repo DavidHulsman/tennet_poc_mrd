@@ -2,7 +2,6 @@ import { useForm } from "./useForm";
 import { createEffect } from "solid-js";
 import styles from "./InsertEntity.module.css";
 
-const printLog = (input) => console.log(input);
 
 function InsertEntity() {
   const { form, updateFormField, submit, clearField } = useForm();

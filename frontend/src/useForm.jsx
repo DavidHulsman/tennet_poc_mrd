@@ -18,7 +18,18 @@ const submit = (form) => {
   };
   // should be submitting your form to some backend service
   console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
+
+  // mongoClient.connect(url, (err, db) => {
+  //   if (err) throw err;
+  //   const dbo = db.db("MRD_DB");
+  //   dbo.collection("entity").insertOne(dataToSubmit, (err, res) => {
+  //     if (err) throw err;
+  //     console.log("1 document inserted");
+  //     db.close();
+  //   });
+  // });
 };
+
 const useForm = () => {
   const [form, setForm] = createStore({
     name: "",
@@ -48,4 +59,3 @@ const useForm = () => {
 };
 
 export { useForm };
-
