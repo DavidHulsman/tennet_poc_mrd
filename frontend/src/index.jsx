@@ -3,12 +3,12 @@ import { render } from "solid-js/web";
 import { HopeProvider } from "@hope-ui/solid";
 
 import "./index.css";
-import App from "./App";
+import InsertEntity from "./InsertEntity";
 
 render(
   () => (
     <HopeProvider>
-      <App />
+      <InsertEntity />
     </HopeProvider>
   ),
   document.getElementById("root")
