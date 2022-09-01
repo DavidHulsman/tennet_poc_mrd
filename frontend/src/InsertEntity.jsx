@@ -1,48 +1,75 @@
-import styles from "./InsertEntity.module.css";
-import { createSignal } from "solid-js";
-import {
-  HStack,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputLeftElement,
-  InputRightAddon,
-  InputRightElement,
-  Button,
-  Center,
-  Heading,
-  VStack,
-} from "@hope-ui/solid";
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-} from "@hope-ui/solid";
+import { useForm } from "./useForm";
+import { createEffect } from "solid-js";
+import styles from './InsertEntity.module.css';
 
 function InsertEntity() {
-  const [value, setValue] = createSignal("");
+  const { form, updateFormField, submit, clearField } = useForm();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submit(form);
+  };
 
-  const handleInput = (e) => setValue(e.target.value);
-
-  const isInvalid = () => value() === "";
+  createEffect(() => {
+    if (form.sameAsAddress) {
+      clearField("shippingAddress");
+    }
+  });
 
   return (
-    <Center h={"100%"}>
-      <VStack spacing={10}>
-        <FormControl
-          onSubmit={(values) => {
-            console.log(values);
-          }}
-        >
-          <Input id="name" type="text" required placeholder="Name" />
-          <Input id="shortname" type="text" placeholder="Shortname" />
-          <HStack justifyContent="flex-end">
-            <Button type="submit">Submit</Button>
-          </HStack>
-        </FormControl>
-      </VStack>
-    </Center>
+    <div class="InsertEntity">
+      <h1>Submitting a form using SolidJS stores</h1>
+      <form onSubmit={handleSubmit}>
+        <div class="form-control">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={form.name}
+            onChange={updateFormField("name")}
+          />
+        </div>
+        <div class="form-control">
+          <label for="surname">Surname:</label>
+          <input
+            type="text"
+            id="surname"
+            value={form.surname}
+            onChange={updateFormField("surname")}
+          />
+        </div>
+        <div class="form-control">
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            value={form.address}
+            onChange={updateFormField("address")}
+          />
+        </div>
+        <div class="form-control">
+          <label for="shipping-address">Same as address</label>
+          <input
+            type="checkbox"
+            id="same-address"
+            checked={form.sameAsAddress}
+            onChange={updateFormField("sameAsAddress")}
+          />
+        </div>
+        <div class="form-control">
+          <label for="shipping-address">Shipping address:</label>
+          <input
+            type="text"
+            id="shipping-address"
+            value={form.shippingAddress}
+            disabled={form.sameAsAddress}
+            readonly={form.sameAsAddress}
+            onChange={updateFormField("shippingAddress")}
+          />
+        </div>
+        <input class="form-submit" type="submit" value="Submit order" />
+      </form>
+      <pre>{JSON.stringify(form, null, 2)}</pre>
+    </div>
   );
 }
 

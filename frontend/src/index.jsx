@@ -7,9 +7,7 @@ import InsertEntity from "./InsertEntity";
 
 render(
   () => (
-    <HopeProvider>
       <InsertEntity />
-    </HopeProvider>
   ),
   document.getElementById("root")
 );
