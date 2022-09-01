@@ -14,9 +14,7 @@ const submit = (form) => {
   // map fields, if needed, e.g. shipping_address
   const dataToSubmit = {
     name: form.name,
-    surname: form.surname,
-    address: form.address,
-    shipping_address: form.shippingAddress,
+    shortname: form.shortname,
   };
   // should be submitting your form to some backend service
   console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
@@ -24,10 +22,7 @@ const submit = (form) => {
 const useForm = () => {
   const [form, setForm] = createStore({
     name: "",
-    surname: "",
-    address: "",
-    shippingAddress: "",
-    sameAsAddress: false,
+    shortname: "",
   });
 
   const clearField = (fieldName) => {

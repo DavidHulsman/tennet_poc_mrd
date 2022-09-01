@@ -1,6 +1,8 @@
 import { useForm } from "./useForm";
 import { createEffect } from "solid-js";
-import styles from './InsertEntity.module.css';
+import styles from "./InsertEntity.module.css";
+
+const printLog = (input) => console.log(input);
 
 function InsertEntity() {
   const { form, updateFormField, submit, clearField } = useForm();
@@ -29,44 +31,15 @@ function InsertEntity() {
           />
         </div>
         <div class="form-control">
-          <label for="surname">Surname:</label>
+          <label for="shortname">Shortname:</label>
           <input
             type="text"
-            id="surname"
-            value={form.surname}
-            onChange={updateFormField("surname")}
+            id="shortname"
+            value={form.shortname}
+            onChange={updateFormField("shortname")}
           />
         </div>
-        <div class="form-control">
-          <label for="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            value={form.address}
-            onChange={updateFormField("address")}
-          />
-        </div>
-        <div class="form-control">
-          <label for="shipping-address">Same as address</label>
-          <input
-            type="checkbox"
-            id="same-address"
-            checked={form.sameAsAddress}
-            onChange={updateFormField("sameAsAddress")}
-          />
-        </div>
-        <div class="form-control">
-          <label for="shipping-address">Shipping address:</label>
-          <input
-            type="text"
-            id="shipping-address"
-            value={form.shippingAddress}
-            disabled={form.sameAsAddress}
-            readonly={form.sameAsAddress}
-            onChange={updateFormField("shippingAddress")}
-          />
-        </div>
-        <input class="form-submit" type="submit" value="Submit order" />
+        <input class="form-submit" type="submit" value="Insert entity" />
       </form>
       <pre>{JSON.stringify(form, null, 2)}</pre>
     </div>
