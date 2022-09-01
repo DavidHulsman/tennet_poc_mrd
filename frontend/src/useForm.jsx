@@ -1,6 +1,5 @@
 import { createStore } from "solid-js/store";
-
-const backend_url = "http://localhost:5000"; // flask backend
+import { mongo_url } from "./mongoSettings";
 
 const submit = (form) => {
   // here we can:
@@ -12,7 +11,7 @@ const submit = (form) => {
   };
   // should be submitting your form to some backend service
   console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
-  fetch(backend_url + "/insert", {
+  fetch(`${mongo_url}/insert`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

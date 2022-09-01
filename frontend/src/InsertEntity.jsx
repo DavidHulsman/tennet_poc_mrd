@@ -40,7 +40,7 @@ function InsertEntity() {
         </div>
         <input class="form-submit" type="submit" value="Insert entity" />
       </form>
-      <pre>{JSON.stringify(form, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(form, null, 2)}</pre> */}
     </div>
   );
 }
