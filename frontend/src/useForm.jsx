@@ -11,12 +11,12 @@ const submit = (form) => {
   };
   // should be submitting your form to some backend service
   console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
-  fetch(`${mongo_url}/insert`, {
+  fetch(`${mongo_url}/entities`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: dataToSubmit,
+    body: JSON.stringify(dataToSubmit),
   });
 };
 

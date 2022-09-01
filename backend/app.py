@@ -4,10 +4,12 @@ from flask import Flask
 from flask import request
 
 from .service.entity import createEntity, deleteEntity, getAllEntities, getEntityById, updateEntity
+from flask_cors import CORS
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
+    CORS(app)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing

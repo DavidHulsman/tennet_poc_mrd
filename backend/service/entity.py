@@ -2,11 +2,12 @@ from multiprocessing.sharedctypes import Value
 from typing import Any
 from pymongo import MongoClient
 from pymongo.collection import Collection
-from ..config import ENTITY_COLLECTION_NAME, MONGO_USERNAME, MONGO_PASSWORD
+from ..config import ENTITY_COLLECTION_NAME, MONGO_USERNAME, MONGO_PASSWORD, MONGO_HOST
 from ..util import convert_str_to_object_id, deserialize_object, serialize_object, serialize_objects
 
 def getClient() -> MongoClient:
-    return MongoClient('localhost', username=MONGO_USERNAME,password=MONGO_PASSWORD, port=27017)
+    print(MONGO_HOST)
+    return MongoClient(MONGO_HOST, username=MONGO_USERNAME,password=MONGO_PASSWORD, port=27017)
 
 def createEntityCollectionIfNecessary(client:MongoClient) -> bool:
     hasCollection = ENTITY_COLLECTION_NAME in client.mrd.list_collection_names()

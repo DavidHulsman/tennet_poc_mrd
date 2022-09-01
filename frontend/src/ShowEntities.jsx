@@ -8,8 +8,7 @@ const [entities, setEntities] = createSignal([]);
 createEffect(async () => {
   const res = await fetch(`${mongo_url}/entities`);
   const json = await res.json();
-  setEntities(json.entities);
-  console.log(json.entities);
+  setEntities(json);
 });
 
 function ShowEntities() {
@@ -17,7 +16,7 @@ function ShowEntities() {
     <div class="ShowEntities">
       <h1>Available entities</h1>
       <For each={entities()}>
-        {(entity => <EntityCard pet={entity} />)}
+        {(entity) => <EntityCard entity={entity} />}
       </For>
     </div>
   );
