@@ -3,18 +3,16 @@ lockfileVersion: 5.4
 specifiers:
   '@hope-ui/solid': ^0.6.7
   '@stitches/core': ^1.2.8
-  pnpm: ^7.9.5
   solid-js: ^1.5.1
-  solid-transition-group: ^0.0.11
+  solid-transition-group: ^0.0.10
   vite: ^3.0.9
   vite-plugin-solid: ^2.3.0
 
 dependencies:
-  '@hope-ui/solid': 0.6.7_6xdyjafiyijdzwpzjbjch6rk4m
+  '@hope-ui/solid': 0.6.7_pk6gvyn2wlnwvfru7v242mk2ou
   '@stitches/core': 1.2.8
-  pnpm: 7.9.5
   solid-js: 1.5.1
-  solid-transition-group: 0.0.11_solid-js@1.5.1
+  solid-transition-group: 0.0.10_solid-js@1.5.1
 
 devDependencies:
   vite: 3.0.9
@@ -348,7 +346,7 @@ packages:
       '@floating-ui/core': 0.6.2
     dev: false
 
-  /@hope-ui/solid/0.6.7_6xdyjafiyijdzwpzjbjch6rk4m:
+  /@hope-ui/solid/0.6.7_pk6gvyn2wlnwvfru7v242mk2ou:
     resolution: {integrity: sha512-7zGGy4QbGUC7QhwRnNH8HO0MZFg4jFISlC2cnAMBfFBy272uqQN3PYdTjiIbnpR/4JilUfxCWpFQY+4qslqcIw==}
     peerDependencies:
       '@stitches/core': ^1.2.8
@@ -362,7 +360,7 @@ packages:
       lodash.merge: 4.6.2
       scroll-lock: 2.1.5
       solid-js: 1.5.1
-      solid-transition-group: 0.0.11_solid-js@1.5.1
+      solid-transition-group: 0.0.10_solid-js@1.5.1
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -822,12 +820,6 @@ packages:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: true
 
-  /pnpm/7.9.5:
-    resolution: {integrity: sha512-+r7+PlBIsblqia8eUOUsBp/R+lHmGAm55jyQRt3DWMUI0srVR1aNJhQECfx24L53Ckz9g48mVxQXEniQMWQPmw==}
-    engines: {node: '>=14.6'}
-    hasBin: true
-    dev: false
-
   /postcss/8.4.16:
     resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -883,8 +875,8 @@ packages:
       solid-js: 1.5.1
     dev: true
 
-  /solid-transition-group/0.0.11_solid-js@1.5.1:
-    resolution: {integrity: sha512-WcMhZvaQKAWfByVgtJuKwR2naXQHG1tJHDvqsC/EyNsoNWRkDu+9AWcwaUWW1kXZ24n17We0IIRe7z4G5dEYRw==}
+  /solid-transition-group/0.0.10_solid-js@1.5.1:
+    resolution: {integrity: sha512-b3O9z6BUP60CG1WnTdqFuvHms0reDNYwQF+eAEEaSaoDEmiOu9+Lu7zQgWGySJjaAdSAClhmFCmx/eAjQgfIoA==}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:

@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
-import { HopeProvider } from '@hope-ui/solid'
 
 function App() {
   return (
-    <HopeProvider>
       <div class={styles.App}>
         <header class={styles.header}>
           <img src={logo} class={styles.logo} alt="logo" />
@@ -21,7 +19,6 @@ function App() {
           </a>
         </header>
       </div>
-    </HopeProvider>
   );
 }
 
