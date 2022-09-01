@@ -1,12 +1,6 @@
 import { createStore } from "solid-js/store";
 
-// type FormFields = {
-//   name?: string;
-//   surname?: string;
-//   address?: string;
-//   shippingAddress?: string;
-//   sameAsAddress: boolean;
-// };
+const backend_url = "http://localhost:5000"; // flask backend
 
 const submit = (form) => {
   // here we can:
@@ -18,16 +12,13 @@ const submit = (form) => {
   };
   // should be submitting your form to some backend service
   console.log(`submitting ${JSON.stringify(dataToSubmit)}`);
-
-  // mongoClient.connect(url, (err, db) => {
-  //   if (err) throw err;
-  //   const dbo = db.db("MRD_DB");
-  //   dbo.collection("entity").insertOne(dataToSubmit, (err, res) => {
-  //     if (err) throw err;
-  //     console.log("1 document inserted");
-  //     db.close();
-  //   });
-  // });
+  fetch(backend_url + "/insert", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: dataToSubmit,
+  });
 };
 
 const useForm = () => {
