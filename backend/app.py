@@ -1,7 +1,8 @@
+from crypt import methods
 import os
 
 from flask import Flask
-
+from flask import request
 
 def create_app(test_config=None):
     # create and configure the app
@@ -25,8 +26,9 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route('/entities',methods=["GET","PUT"])
+    def entities(m):
+        if request.method == 'POST':
+            
 
-    return app
+        return app
